@@ -5,6 +5,6 @@ OS
 no
 
 
-/var/tmp
+/non_ram_tmp
 /dev/tty
 no
