@@ -46,6 +46,10 @@ typedef unsigned char bool_t;
 #ifndef HAVE_uint
 typedef unsigned int uint;
 #endif
+#if FORCE_UINT
+typedef unsigned int uint;
+#endif
+
 
 #ifndef HAVE_uint64
 #ifdef HAVE_uint64_t
