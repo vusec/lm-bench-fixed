@@ -173,7 +173,7 @@ timeout()
 void
 server_main()
 {
-	char	*buf = (char*)valloc(MAX_MSIZE);
+	char	*buf = (char*)bench_valloc(MAX_MSIZE);
 	int     sock, sent, namelen, seq = 0;
 	struct sockaddr_in it;
 

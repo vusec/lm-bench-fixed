@@ -50,6 +50,9 @@ typedef unsigned int uint;
 typedef unsigned int uint;
 #endif
 
+/* lmbench itself defines it, but somwhere there is a broken valloc still around
+that returns an int which breaks everything on 32 bit systems.*/
+#define bench_valloc(SIZE) malloc(SIZE)
 
 #ifndef HAVE_uint64
 #ifdef HAVE_uint64_t

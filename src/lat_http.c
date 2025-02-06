@@ -104,7 +104,7 @@ main(int ac, char **av)
 	}
 
 	i = 0;
-	buf = valloc(XFERSIZE);
+	buf = bench_valloc(XFERSIZE);
 	bzero(buf, XFERSIZE);
 	while (fgets(file, sizeof(file), stdin)) {
 		chop(file);

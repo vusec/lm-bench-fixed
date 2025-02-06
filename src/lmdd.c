@@ -290,7 +290,7 @@ main(int ac, char **av)
 		exit(1);
 	}
 	for (i = 0; i < nbufs; i++) {
-		if (!(bufs[i] = (uint *) VALLOC((unsigned) Bsize))) {
+		if (!(bufs[i] = (uint *) bench_valloc((unsigned) Bsize))) {
 			perror("VALLOC");
 			exit(1);
 		}

@@ -52,7 +52,7 @@ zone(char *disk, int oflag, int bsize)
 		perror(disk);
 		exit(1);
 	}
-	buf = valloc(bsize);
+	buf = bench_valloc(bsize);
 	if (!buf) {
 		perror("valloc");
 		exit(1);
@@ -154,7 +154,7 @@ seek(char *disk, int oflag)
 	flushdisk(fd);
 #endif
 	size = disksize(disk);
-	buf = valloc(IOSIZE);
+	buf = bench_valloc(IOSIZE);
 	bzero(buf, IOSIZE);
 
 	/*

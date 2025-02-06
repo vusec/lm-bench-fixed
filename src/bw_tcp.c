@@ -127,7 +127,7 @@ initialize(iter_t iterations, void *cookie)
 
 	if (iterations) return;
 
-	state->buf = valloc(state->msize);
+	state->buf = bench_valloc(state->msize);
 	if (!state->buf) {
 		perror("valloc");
 		exit(1);
@@ -236,7 +236,7 @@ source(int data)
 		exit(0);
 	}
 
-	buf = valloc(m);
+	buf = bench_valloc(m);
 	bzero(buf, m);
 
 	/*

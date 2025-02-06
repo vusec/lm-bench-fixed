@@ -463,11 +463,11 @@ tlb_initialize(iter_t iterations, void* cookie)
 
 	/* first, layout the sequence of page accesses */
 	for (i = 0; i < npages; ++i) {
-		p = addr[i] = (char*)valloc(pagesize);
+		p = addr[i] = (char*)bench_valloc(pagesize);
 		if (p == NULL) return;
 		if ((unsigned long)p % pagesize) {
 			free(p);
-			p = addr[i] = (char*)valloc(2 * pagesize);
+			p = addr[i] = (char*)bench_valloc(2 * pagesize);
 			if (p == NULL) return;
 			p += pagesize - (unsigned long)p % pagesize;
 		}

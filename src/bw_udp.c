@@ -102,7 +102,7 @@ main(int ac, char **av)
 		state.move += state.move - state.move % state.msize;
 	}
 
-	state.buf = valloc(state.msize);
+	state.buf = bench_valloc(state.msize);
 	if (!state.buf) {
 		perror("valloc");
 		exit(1);
@@ -172,7 +172,7 @@ cleanup(iter_t iterations, void* cookie)
 void
 server_main()
 {
-	char	*buf = (char*)valloc(MAX_MSIZE);
+	char	*buf = (char*)bench_valloc(MAX_MSIZE);
 	int     sock, namelen, seq = 0;
 	long	nbytes, msize;
 	struct sockaddr_in it;

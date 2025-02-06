@@ -49,7 +49,7 @@ initialize(iter_t iterations, void *cookie)
 	    case 0:
 		close(pipes[0]);
 		handle_scheduler(benchmp_childid(), 1, 1);
-		state->buf = valloc(state->xfer);
+		state->buf = bench_valloc(state->xfer);
 		if (state->buf == NULL) {
 			perror("child: no memory");
 			state->initerr = 4;
@@ -71,7 +71,7 @@ initialize(iter_t iterations, void *cookie)
 	}
 	close(pipes[1]);
 	state->readfd = pipes[0];
-	state->buf = valloc(state->xfer + getpagesize());
+	state->buf = bench_valloc(state->xfer + getpagesize());
 	if (state->buf == NULL) {
 		perror("parent: no memory");
 		state->initerr = 4;
