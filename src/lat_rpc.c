@@ -117,7 +117,7 @@ main(int ac, char **av)
 		{
 			cl = clnt_create(optarg, XACT_PROG, XACT_VERS, "udp");
 			if (!cl) {
-				clnt_pcreateerror(state.server);
+				clnt_pcreateerror("error:");
 				exit(1);
 			}
 			clnt_call(cl, RPC_EXIT, (xdrproc_t)xdr_void, 0, 
