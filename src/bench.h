@@ -4,6 +4,8 @@
 #ifndef _BENCH_H
 #define _BENCH_H
 
+#define _DEFAULT_SOURCE
+
 #ifdef WIN32
 #include <windows.h>
 typedef unsigned char bool_t;
@@ -38,6 +40,7 @@ typedef unsigned char bool_t;
 #include	<rpc/rpc.h>
 #endif
 #include	<rpc/types.h>
+#include <string.h>
 
 #include 	<stdarg.h>
 #ifndef HAVE_uint

@@ -288,7 +288,7 @@ disksize(char *disk)
 int
 seekto(int fd, uint64 off)
 {
-	// In modern times, lseek() is 64-bit clean.
+	/* In modern times, lseek() is 64-bit clean. */
 
 	uint64	here = 0;
 

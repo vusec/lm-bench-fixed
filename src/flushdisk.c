@@ -10,6 +10,7 @@
 #include	<stdlib.h>
 #include	<sys/ioctl.h>
 #include	<sys/mount.h>
+#include <stdlib.h>
 
 int
 flushdisk(int fd)
@@ -22,6 +23,7 @@ flushdisk(int fd)
 #endif
 
 #ifdef	MAIN
+#include <stdlib.h>
 int
 main(int ac, char **av)
 {
